@@ -1,0 +1,35 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  src: url("./media/fonts/OpenSans-Regular.ttf") format('ttf')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  src: url("./media/fonts/OpenSans-Regular.ttf") format('ttf')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: italic;
+  src: url("./media/fonts/OpenSans-BoldItalic.ttf") format('ttf')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: italic;
+  src: url("./media/fonts/OpenSans-Regular.ttf") format('ttf')
+}
+
+
+html{
+  body{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+  }
+}

@@ -15,8 +15,18 @@ module.exports = {
         publicPath: ""
     },
     optimization: {
+        //generate separate js file for common imported libraries such as lodash
         splitChunks: {
-            chunks: "all"
+            chunks: "all",
+            /**
+             * by default if size of the common codes is less than 30KB, the separate file will not be generated but will be embedded in to js files.
+             * we can change default min size.
+             * to understand better change minSize value to 100, 1000 and 1000000 and then check the contents of dist/kiwi.js
+             */
+            minSize: 10000,
+
+            //default value is ~
+            automaticNameDelimiter: "_"
         }
     },
     mode: 'development',
@@ -58,6 +68,18 @@ module.exports = {
                 use: [
                     {
                         loader: 'handlebars-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.(ttf|woff|woff2)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: '/fonts/fonts/'
+                        }
                     }
                 ]
             }
