@@ -33,9 +33,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(gif|png|jpg)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: '/media/'
+                        }
+                    }
                 ]
             },
             {
@@ -80,7 +86,7 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
         ]
     },
     plugins: [
